@@ -21,9 +21,9 @@
                 <nuxt-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                   About us
                 </nuxt-link>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
+                <nuxt-link to="/contact" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                     Contact us
-                  </a>
+                  </nuxt-link >
               </div>
               <div>
                 <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-orange-500 text-white border-white hover:border-transparent hover:text-white hover:bg-orange-600 mt-4 lg:mt-0">Get Started</a>
