@@ -15,12 +15,12 @@
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                   Home
                 </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
+                <nuxt-link to="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                   Our Services
-                </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
+                </nuxt-link>
+                <nuxt-link to="/about" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                   About us
-                </a>
+                </nuxt-link>
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-orange-600 mr-4">
                     Contact us
                   </a>

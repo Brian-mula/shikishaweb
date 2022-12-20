@@ -6,8 +6,8 @@
             <h4 class="font-semibold text-gray-800 text-2xl">Making our market <br> able to sell and buy mostly second <br> hand goods</h4>
             <p class="py-6 font-normal text-gray-500 font-md">We make sure the buyer get the right <br> product and seller to get customers for his goods</p>
         </div>
-        <div class="bg-orange-400  w-1/2" id="hscreen">
-            <img src="~/assets/images/service.jpg" class="h-full" alt="">
+        <div class="w-1/2" id="hscreen">
+            <img src="~/assets/images/service.jpg" class="h-full rounded-l-full" alt="">
         </div>
        </div>
     </div>
