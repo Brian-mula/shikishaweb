@@ -5,7 +5,9 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+    layout:"normal-lay"
+})
 </script>
 
 <style lang="scss" scoped>
