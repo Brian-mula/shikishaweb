@@ -1,9 +1,9 @@
 <template>
     <div class="flex">
-        <div class="w-60">
-            <h3>Side Bar</h3>
+        <div class="w-56 h-screen">
+           <Sidenav/>
         </div>
-        <div class="">
+        <div class="w-full px-2">
             <HomeNav/>
             <slot/>
         </div>
