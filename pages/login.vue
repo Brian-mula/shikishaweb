@@ -1,6 +1,9 @@
 <template>
   <div class="ml-auto mr-auto mt-20 w-96">
     <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+      <div class="flex justify-center items-center my-6">
+        <h3 class="text-lg text-orange-500">Login to <span class="text-blue-500">Shiki <span class="text-orange-600 px-0 mx-0">sh</span> a</span></h3>
+      </div>
       <form>
         <div class="form-group mb-6">
           <label
@@ -42,12 +45,14 @@
             >Check me out</label
           >
         </div>
+       <div class="flex justify-center items-center">
         <button
-          type="submit"
-          class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        >
-          Submit
-        </button>
+        type="submit"
+        class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+      >
+        Login
+      </button>
+       </div>
       </form>
     </div>
   </div>
