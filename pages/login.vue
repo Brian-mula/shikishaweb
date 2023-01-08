@@ -58,6 +58,7 @@
       </button>
        </div>
       </form>
+      <div class="flex justify-between items-center">Sign Up</div>
     </div>
   </div>
 </template>
