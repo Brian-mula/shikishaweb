@@ -12,6 +12,7 @@
        
         <div>
             <button
+            @click="handleLogout"
             type="button"
             class="inline-block text-sm px-4 py-2 leading-none border rounded bg-orange-500 text-white border-white hover:border-transparent hover:text-white hover:bg-orange-600 mt-4 lg:mt-0"
             >Logout</button
@@ -21,7 +22,15 @@
     </div>
   </template>
   
-  <script setup></script>
+  <script setup>
+  const router=useRouter()
+const handleLogout=async()=>{
+  await logOut()
+  router.push('/')
+
+}
+
+  </script>
   
   <style lang="scss" scoped></style>
   
