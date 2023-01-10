@@ -2,6 +2,8 @@
 import {
     createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut
 } from "firebase/auth";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+
 
 export const signIn = async (email, password) => {
   const auth = getAuth();
@@ -9,9 +11,22 @@ export const signIn = async (email, password) => {
   return cred;
 };
 
-export const signUp = async (email, password) => {
+export const signUp = async (email, password,firstName,lastName,phone) => {
+    const db=getFirestore()
   const auth = getAuth();
   const cred = await createUserWithEmailAndPassword(auth, email, password);
+    try{
+        const docRef=await addDoc(collection,(db,"users"),{
+            firstName:firstName,
+            lastName:lastName,
+            phone:phone,
+            email:email
+        })
+        console.log("Document written with ID: ", docRef.id);
+
+    }catch(e){
+        console.log(e)
+    }
   return cred;
 };
 
