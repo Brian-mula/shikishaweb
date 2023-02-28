@@ -45,32 +45,31 @@
                         <label
                           for="exampleInputEmail1"
                           class="form-label inline-block mb-2 text-gray-700"
-                          >Email address:</label
+                          >Username:</label
                         >
                         <input
-                        v-model="email"
-                          type="email"
+                        v-model="username"
+                          type="text"
                           class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                          id="exampleInputEmail1"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                  
+                          placeholder="Enter username"
                         />
-                        <p v-if="emailError" class="text-red-600">Email is required</p>
+                        <p v-if="usernameError" class="text-red-600">Username is required</p>
                       </div>
                       <div class="form-group mb-6">
                         <label
                           for="exampleInputPassword1"
                           class="form-label inline-block mb-2 text-gray-700"
-                          >Password:</label
+                          >Confirm Password:</label
                         >
                         <input
-                        v-model="password"
+                        v-model="conpassword"
                           type="password"
                           class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                           id="exampleInputPassword1"
                           placeholder="Password"
                         />
-                        <p v-if="passwordError" class="text-red-600">Password is required</p>
+                        <p v-if="conpasswordError" class="text-red-600">Password is required</p>
                       </div>
                 </div>
              </div>
@@ -92,17 +91,15 @@
               type="button"
               class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
-              Login
+              Sign up
             </button>
              </div>
             </form>
             <div class="flex justify-center items-center py-6">
-              <nuxt-link to="/register"
-              
-              type="button"
-              class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              <nuxt-link to="/login"
+              class="text-green-700 text-sm"
             >
-              Sign up
+              Already have an account?
             </nuxt-link>
             </div>
           </div>
@@ -111,9 +108,60 @@
 </template>
 
 <script setup>
+
 definePageMeta({
     layout:"loginlay"
 })
+const router=useRouter()
+const email=ref(null)
+const password=ref(null)
+const username=ref(null)
+const usernameError =ref(false)
+const emailError=ref(false)
+const passwordError=ref(false)
+const conpassword=ref(null)
+const conpasswordError=ref(false)
+
+const handleLogin=async()=>{
+  console.log("I've been tapped")
+  if(email.value && username.value && password.value && conpassword.value){
+    await signUp(email.value,password.value,username.value)
+    router.push('/home')
+    console.log("They have been filled")
+  }else{
+      usernameError.value=true
+      emailError.value=true
+      passwordError.value=true
+      conpasswordError.value=true
+    if(!email.value){
+      usernameError.value=false
+      emailError.value=true
+      passwordError.value=false
+      conpasswordError.value=false
+      console.log("provide email")
+    }
+    if(!username.value){
+      usernameError.value=true
+      emailError.value=false
+      passwordError.value=false
+      conpasswordError.value=false
+      console.log("Provide username")
+    }
+    if(!password.value){
+      usernameError.value=false
+      emailError.value=false
+      passwordError.value=true
+      conpasswordError.value=false
+      console.log("provide password")
+    }
+    if(!conpassword.value){
+      conpasswordError.value=true
+      usernameError.value=false
+      emailError.value=false
+      passwordError.value=false
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
